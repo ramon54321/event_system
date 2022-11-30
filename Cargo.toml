@@ -1,0 +1,11 @@
+[package]
+name = "events"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+strum = { version = "0.24", features = ["derive"] }
+enum_index_repr = "0.2"
+array_init_macro = "0.1"

@@ -6,7 +6,7 @@
 
 Provides a simple lightweight event system for Rust. 
 
-[Crate on Crates.io](https://crates.io/crates/events_system)
+[Crate on Crates.io](https://crates.io/crates/event_system)
 
 ### Example
 

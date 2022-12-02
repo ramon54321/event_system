@@ -1,7 +1,9 @@
 [package]
-name = "events_macros"
+name = "event_system_macros"
 version = "0.1.0"
 edition = "2021"
+description = "Macros for event_system."
+license = "MIT"
 
 [dependencies]
 syn = { version = "1.0.98", features = ["full", "fold", "extra-traits"] }

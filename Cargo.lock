@@ -38,7 +38,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "events"
+name = "event_system"
 version = "0.1.0"
 dependencies = [
  "array_init_macro",

@@ -1,6 +1,7 @@
 use events::create_event_system;
 
 create_event_system! {
+    EventSystem
     ApplicationLoad {}
     ApplicationExit {}
     KeyDown {

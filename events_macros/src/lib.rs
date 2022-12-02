@@ -29,17 +29,21 @@ impl Parse for ItemEventDef {
 
 #[derive(Debug, Clone)]
 enum MacroInput {
-    EventDefs { defs: Vec<ItemEventDef> },
+    EventDefs {
+        system_name: Ident,
+        defs: Vec<ItemEventDef>,
+    },
 }
 
 impl Parse for MacroInput {
     fn parse(input: ParseStream) -> syn::Result<Self> {
-        let mut items = Vec::new();
+        let system_name: Ident = input.parse()?;
+        let mut defs = Vec::new();
         while !input.is_empty() {
             let item = input.parse::<ItemEventDef>()?;
-            items.push(item);
+            defs.push(item);
         }
-        Ok(MacroInput::EventDefs { defs: items })
+        Ok(MacroInput::EventDefs { system_name, defs })
     }
 }
 
@@ -47,8 +51,8 @@ impl Parse for MacroInput {
 pub fn create_event_system(input: TokenStream) -> TokenStream {
     let output = parse_macro_input!(input as MacroInput);
 
-    let defs = match output {
-        MacroInput::EventDefs { defs } => defs.clone(),
+    let (system_name, defs) = match output {
+        MacroInput::EventDefs { system_name, defs } => (system_name, defs.clone()),
     };
 
     let events_data_structs = defs.iter().filter_map(|def| {
@@ -158,10 +162,10 @@ pub fn create_event_system(input: TokenStream) -> TokenStream {
 
     let expanded = quote! {
         #(#events_data_structs)*
-        pub struct EventSystem {
+        pub struct #system_name {
             #(#struct_fields)*
         }
-        impl EventSystem {
+        impl #system_name {
             pub fn new() -> Self {
                 Self {
                     #(#constructors)*

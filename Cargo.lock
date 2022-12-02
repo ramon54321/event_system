@@ -3,12 +3,6 @@
 version = 3
 
 [[package]]
-name = "array_init_macro"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "400ffe4740f289b3211962ffa746f0431109bade012413ac3c7a91c06d2bd7c9"
-
-[[package]]
 name = "convert_case"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -18,50 +12,23 @@ dependencies = [
 ]
 
 [[package]]
-name = "enum_index_repr"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8d70495e7bfa822a67cd8cc104a0b91c1bc62e5db64038b3878dd10d60976fa2"
-dependencies = [
- "enum_index_repr_derive",
-]
-
-[[package]]
-name = "enum_index_repr_derive"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f7fb2282db55eabfd8cf1e60e4a5268154655c32d5d30d6e31087883003d5a7"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
-]
-
-[[package]]
 name = "event_system"
 version = "0.1.0"
 dependencies = [
- "array_init_macro",
- "enum_index_repr",
- "events_macros",
- "strum",
+ "event_system_macros",
 ]
 
 [[package]]
-name = "events_macros"
+name = "event_system_macros"
 version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "aba331e750804d97249688e6698e4686c9b49c1b7b3f5325b24b45ccea97b049"
 dependencies = [
  "convert_case",
  "proc-macro2",
  "quote",
  "syn",
 ]
-
-[[package]]
-name = "heck"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2540771e65fc8cb83cd6e8a237f70c319bd5c29f78ed1084ba5d50eeac86f7f9"
 
 [[package]]
 name = "proc-macro2"
@@ -79,34 +46,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bbe448f377a7d6961e30f5955f9b8d106c3f5e449d493ee1b125c1d43c2b5179"
 dependencies = [
  "proc-macro2",
-]
-
-[[package]]
-name = "rustversion"
-version = "1.0.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "97477e48b4cf8603ad5f7aaf897467cf42ab4218a38ef76fb14c2d6773a6d6a8"
-
-[[package]]
-name = "strum"
-version = "0.24.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "063e6045c0e62079840579a7e47a355ae92f60eb74daaf156fb1e84ba164e63f"
-dependencies = [
- "strum_macros",
-]
-
-[[package]]
-name = "strum_macros"
-version = "0.24.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1e385be0d24f186b4ce2f9982191e7101bb737312ad61c1f2f984f34bcf85d59"
-dependencies = [
- "heck",
- "proc-macro2",
- "quote",
- "rustversion",
- "syn",
 ]
 
 [[package]]

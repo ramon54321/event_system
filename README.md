@@ -15,7 +15,7 @@ The first entry in the macro is the name of the event system struct.
 Any following entries take the form of struct-enum variants, where the name is the event name and the data the structure for the payload when the event is fired.
 
 ```rust
-use events::create_event_system;
+use event_system::create_event_system;
 
 create_event_system! {
     EventSystem // <- Name of struct

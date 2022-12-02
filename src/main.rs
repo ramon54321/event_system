@@ -1,4 +1,4 @@
-use events::create_event_system;
+use event_system::create_event_system;
 
 create_event_system! {
     EventSystem
